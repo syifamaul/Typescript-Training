@@ -1,4 +1,4 @@
-class Supplier {
+export default class Supplier {
   suppliercode: string;
   name: string;
   address: string;
@@ -7,40 +7,25 @@ class Supplier {
   flag: string;
   group: string;
   shortname: string;
+  objSupplier: any;
 
-  constructor(
-    suppliercode: string,
-    name: string,
-    address: string,
-    tdoi: number,
-    sdoi: number,
-    flag: string,
-    group: string,
-    shortname: string
-  ) {
-    this.suppliercode = suppliercode;
-    this.name = name;
-    this.address = address;
-    this.tdoi = tdoi;
-    this.sdoi = sdoi;
-    this.flag = flag;
-    this.group = group;
-    this.shortname = shortname;
+  constructor(objSupplier: any) {
+    this.objSupplier = objSupplier;
+    this.suppliercode = this.objSupplier.suppliercode;
+    this.name = this.objSupplier.name;
+    this.address = this.objSupplier.address;
+    this.tdoi = this.objSupplier.tdoi;
+    this.sdoi = this.objSupplier.sdoi;
+    this.group = this.objSupplier.group;
+    this.flag = this.objSupplier.flag;
+    this.shortname = this.objSupplier.shortname;
   }
 
-  getName = function () {
-    return `${this.name} ${this.address}`;
+  getName = () => {
+    return ` ${JSON.stringify(this.objSupplier)}`;
+  };
+
+  toString = () => {
+    return this.objSupplier;
   };
 }
-let s = new Supplier(
-  "08",
-  "BAYER",
-  "Jl. Pancoran Barat 4",
-  18,
-  98,
-  "Active",
-  "OTHERS",
-  "BYR"
-);
-
-console.table(s.getName());
