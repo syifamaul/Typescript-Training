@@ -1,0 +1,1 @@
+class Principal extends Supplier {}
