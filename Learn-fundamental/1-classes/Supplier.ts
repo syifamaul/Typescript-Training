@@ -22,7 +22,7 @@ export default class Supplier {
   }
 
   getName = () => {
-    return ` ${JSON.stringify(this.objSupplier)}`;
+    return this.name;
   };
 
   toString = () => {

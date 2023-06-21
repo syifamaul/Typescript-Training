@@ -1,5 +1,5 @@
 import Supplier from "./Supplier";
-import PrincipalService from "../../PrincipalService";
+import PrincipalService from "./PrincipalService";
 
 export default class Principal implements PrincipalService {
   private message: string;
