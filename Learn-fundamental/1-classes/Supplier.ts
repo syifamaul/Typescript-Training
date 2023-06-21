@@ -1,13 +1,13 @@
 export default class Supplier {
-  suppliercode: string;
-  name: string;
-  address: string;
-  tdoi: number;
-  sdoi: number;
-  flag: string;
-  group: string;
-  shortname: string;
-  objSupplier: any;
+  private suppliercode: string;
+  private name: string;
+  private address: string;
+  private tdoi: number;
+  private sdoi: number;
+  private flag: string;
+  private group: string;
+  private shortname: string;
+  private objSupplier: any;
 
   constructor(objSupplier: any) {
     this.objSupplier = objSupplier;

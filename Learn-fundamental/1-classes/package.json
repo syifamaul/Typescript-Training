@@ -1,0 +1,15 @@
+{
+  "name": "org.typescript.learn",
+  "version": "1.0.0",
+  "description": "typescript",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc & nodemon ./build/app.js "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
