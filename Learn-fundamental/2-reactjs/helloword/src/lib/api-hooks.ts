@@ -9,6 +9,9 @@ type option = {
 export function useGetPosts(props: option) {
   const [fetchState, setFetchState] = useState(FetchState.DEFAULT);
   const [posts, setPosts] = useState<Array<PostData>>([]);
+  const clearData = () => {
+    setFetchState(FetchState.DEFAULT);
+  };
   const getPosts = async () => {
     try {
       setFetchState(FetchState.LOADING);
@@ -23,5 +26,5 @@ export function useGetPosts(props: option) {
     }
   };
 
-  return [posts, fetchState, getPosts] as const;
+  return [posts, fetchState, getPosts, clearData] as const;
 }

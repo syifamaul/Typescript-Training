@@ -1,4 +1,3 @@
-import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import { Card } from './components/card';
@@ -7,16 +6,13 @@ import { FetchState } from './lib/types';
 
 
 function App() {
-  const [posts, fetchState, getPosts] = useGetPosts({url:"https://jsonplaceholder.typicode.com/photos/?_limit=16"});
-  const cleatData = () =>
-  {
-    posts.length= 0;  
-  }
+  const [posts, fetchState, getPosts, clearData] = useGetPosts({url:"https://jsonplaceholder.typicode.com/photos/?_limit=16"});
+  
   return (
     <div className="App">
       <header className="App-header">
         <h4 className='text-slate-500'>Helloword</h4>
-        <button onClick={ cleatData} className='bg-slate-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'> Clear</button>
+        <button onClick={ clearData} className='bg-slate-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'> Clear</button>
         <div className="container">
       <h1>React TypeScript API hooks</h1>
       {fetchState === FetchState.DEFAULT && (
@@ -26,7 +22,7 @@ function App() {
             the API.
           </p>
                 
-          <div className="bg-indigo-900 text-center py-4 lg:px-4">
+          <div className="max-w-xs place-items-center bg-indigo-900 text-center py-4 lg:px-4">
             <div className="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
               <span className="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">New</span>
               <span style={{cursor:"pointer"}} className="font-semibold mr-2 text-left flex-auto" onClick={getPosts}>Get Data from API</span>
