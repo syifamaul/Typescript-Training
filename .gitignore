@@ -1,2 +1,2 @@
-*.js
+/1-classes/build/*.js
 node_modules/

@@ -4,14 +4,14 @@ type data = {
     image: string
 }
 
-export function Card(props : data) {
-    return(
-        <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white p-4 max-h-fit">
-            <img className="w-full" src={props.image} alt="Sunset in the mountains"/>
+export function Card(props: data) {
+    return (
+        <div className="max-w-sm rounded bg-white overflow-hidden shadow-lg bg-white p-4 max-h-fit">
+            <img className="w-full" src={props.image} alt="Sunset in the mountains" />
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2 text-slate-700">{props.title}</div>
                 <p className="text-gray-700 text-base">
-                    {props.description} 
+                    {props.description}
                 </p>
             </div>
             <div className="px-6 pt-4 pb-2">
