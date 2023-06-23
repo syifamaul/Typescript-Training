@@ -6,7 +6,7 @@ import { useEffect, useState, useContext } from 'react'
 
 import Pusher from 'pusher-js'
 
-let pusher = new Pusher('332116290f279cf76db1', {
+let pusher = new Pusher('', {
   cluster: 'ap1'
 });
 
@@ -19,6 +19,7 @@ Pusher.log = (msg) => {
 
 
 import type { Metadata } from 'next'
+import Image from 'next/image';
 export type PostData = {
   userId: number;
   id: number;
@@ -50,7 +51,6 @@ const Home = () => {
               <li key={p.id} className='p-5'>
                 {p.title}
                 <img src={p.url} alt='asdasdasda' width={100} height={100}></img>
-
               </li>
             ))}
           </ul>
